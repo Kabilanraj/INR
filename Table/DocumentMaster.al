@@ -1,4 +1,4 @@
-table 50103 "Document Master"
+table 50103 "Document Master "
 {
     DataClassification = ToBeClassified;
 
