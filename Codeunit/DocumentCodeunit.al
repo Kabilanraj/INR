@@ -5,6 +5,8 @@ codeunit 50104 MyCodeunit
     begin
 
     end;
+    // code 1
+    // code 2
 
     var
         myInt: Integer;
