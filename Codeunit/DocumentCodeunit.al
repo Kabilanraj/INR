@@ -9,6 +9,8 @@ codeunit 50104 MyCodeunit
     // code 2
     //code 5
     // code 6
+    // code 7
+
 
     var
         myInt: Integer;
