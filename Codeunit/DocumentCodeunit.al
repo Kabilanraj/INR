@@ -15,6 +15,7 @@ codeunit 50104 MyCodeunit
     // code 6
     // code 7
     //last test
+    // line
 
 
     var
