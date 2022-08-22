@@ -81,10 +81,13 @@ table 50103 "Document Master"
         field(10; Country; Text[254])
         {
             DataClassification = ToBeClassified;
+            TableRelation = "Country Master";
         }
         field(11; City; Text[254])
         {
             DataClassification = ToBeClassified;
+            TableRelation = if (Country = filter(<> '')) "City Master".City where(Country = field(Country));
+
         }
         field(12; "Travel From Date"; Date)
         {

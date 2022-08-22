@@ -9,6 +9,17 @@ pageextension 50102 SalesReceivablesSetupPageExt extends "Sales & Receivables Se
                 Caption = 'Book Nos.';
                 ApplicationArea = All;
             }
+            field("Country Code"; rec."Country Code")
+            {
+
+                ApplicationArea = All;
+            }
+            field("City Code"; rec."City Code")
+            {
+
+                ApplicationArea = All;
+            }
+
         }
     }
 }

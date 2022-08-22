@@ -127,6 +127,28 @@ page 50103 "Document Management Card"
                 end;
             }
         }
+        area(Processing)
+        {
+
+            group(Request)
+            {
+
+                action("Send Request")
+                {
+                    Image = SendApprovalRequest;
+                    ApplicationArea = all;
+                    Promoted = true;
+                    PromotedCategory = Process;
+
+                    trigger OnAction()
+                    begin
+
+                    end;
+
+
+                }
+            }
+        }
 
     }
 
