@@ -7,5 +7,13 @@ tableextension 50100 SalesReceivablesSetupExt extends "Sales & Receivables Setup
             Caption = 'Book Nos.';
             TableRelation = "No. Series";
         }
+        field(50201; "Country Code"; Code[20])
+        {
+            TableRelation = "No. Series";
+        }
+        field(50202; "City Code"; Code[20])
+        {
+            TableRelation = "No. Series";
+        }
     }
 }
