@@ -82,11 +82,21 @@ table 50103 "Document Master"
         {
             DataClassification = ToBeClassified;
             TableRelation = "Country Master";
+
         }
         field(11; City; Text[254])
         {
+
             DataClassification = ToBeClassified;
             TableRelation = if (Country = filter(<> '')) "City Master".City where(Country = field(Country));
+
+            // NotBlank = false;
+
+
+
+
+
+
 
         }
         field(12; "Travel From Date"; Date)
@@ -137,18 +147,17 @@ table 50103 "Document Master"
             TableRelation = Employee;
 
 
+
             trigger OnValidate()
             begin
                 CalcFields("Employee Name", "Last Name", "Job Title");
                 begin
-                    if emp.Count > 0 then
-                        if not Confirm(emp01) then begin
-                            Clear(emp);
-                            Modify(true);
-                        end;
-                    exit;
+                    Doc_Code.employeechangedata();
                 end;
+
             end;
+
+
         }
         field(17; "No. Series"; Code[20])
         {
@@ -227,6 +236,7 @@ table 50103 "Document Master"
     end;
 
 
+
     trigger OnInsert()
 
 
@@ -251,13 +261,7 @@ table 50103 "Document Master"
         begin
             test01 := System.Today();
             Validate("Create Date", test01);
-
-
         end;
-
-
-
-
 
     end;
 
@@ -269,8 +273,16 @@ table 50103 "Document Master"
     var
         SalesSetup: Record "Sales & Receivables Setup";
         NoSeriesMgt: Codeunit NoSeriesManagement;
+        test01: Date;
 
     var
-        test01: Date;
+        Doc_Code: Codeunit MyCodeunit;
+
+        Cou_Mas: Record "Country Master";
+        City_Mas: Record "City Master";
+
+
+
+
 
 }
