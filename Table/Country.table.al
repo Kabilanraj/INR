@@ -26,16 +26,30 @@ table 50102 "Country Master"
             Editable = false;
             TableRelation = "No. Series";
         }
+        field(4; Countryno; Integer)
+        {
+            DataClassification = ToBeClassified;
+        }
+
 
     }
 
+
     keys
     {
-        key(PK; Country)
+        key(PK; Country, "Country Code")
         {
             Clustered = true;
         }
     }
+    fieldgroups
+    {
+        fieldgroup(DropDown; "Country Code", Country, Countryno, SystemCreatedAt)
+        {
+
+        }
+    }
+
 
 
     var

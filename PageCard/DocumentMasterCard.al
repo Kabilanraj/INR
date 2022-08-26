@@ -37,6 +37,7 @@ page 50103 "Document Management Card"
                 field("EMP NO."; rec."EMP NO.")
                 {
                     ApplicationArea = All;
+
                 }
                 field("Employee Name"; rec."Employee Name")
                 {
@@ -71,10 +72,12 @@ page 50103 "Document Management Card"
                 }
                 field(Country; rec.Country)
                 {
+                    ShowMandatory = true;
                     ApplicationArea = all;
                 }
                 field(City; rec.City)
                 {
+
                     ApplicationArea = all;
                 }
                 field("Travel From Date"; rec."Travel From Date")
@@ -147,7 +150,23 @@ page 50103 "Document Management Card"
 
 
                 }
+
+                action("Cancel Request")
+                {
+                    ApplicationArea = all;
+                    Promoted = true;
+                    PromotedCategory = Process;
+                    Image = CancelApprovalRequest;
+
+                    trigger OnAction()
+                    begin
+
+                    end;
+
+                }
+
             }
+
         }
 
     }
